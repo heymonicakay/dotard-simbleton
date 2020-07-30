@@ -111,6 +111,16 @@ const businesses = [
       }
     ];
 
+export const useBusiness = () => {
+  return businesses.slice()
+}
+
+export const newYorkCompanies = businesses.filter(businessObject => {
+    if (businessObject.addressStateCode === "NY") {
+      
+    }
+    return false
+})
 //     need to export a copy of the list using .slice
 
 //    then filter objects into different arrays

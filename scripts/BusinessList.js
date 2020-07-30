@@ -1,18 +1,23 @@
 import { useBusiness } from "./BusinessProvider.js"
-import { Business } from ".Business.js"
+import { companyHTML } from ".Business.js"
 
 //    placeholders entered for initial commit.
 //    need to write HTML file, then adjust placeholders to meet requirements 
 
-const contentTarget = document.querySelector(".businesses")
+const businessListTarget = document.querySelector(".businesses")
 
 const BusinessList = () => {
+
       const businessArray = useBusiness()
-      contentTarget.innerHTML = "<h1>Businesses</h1>"
+
+      businessListTarget.innerHTML = `
+      <h1 class="heading list--heading business__list--heading">
+      Businesses
+      </h1>`
 
       businessArray.forEach(
-            (businessObject) => {
-                  contentTarget.innerHTML += Business(businessObject)
+            (companyInfo) => {
+                  contentTarget.innerHTML += companyHTML(companyInfo)
             }
       );
 }
